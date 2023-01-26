@@ -1,22 +1,15 @@
-$color-primary: red;
-$color-secondary: blue;
-$color-tertiary: green;
-$value: 1rem;
+@import "convert.scss";
+@import "variables.scss";
 
+
+@mixin article-card($color, $border-color, $font-size: toRem($value) ){
+    color: $color;
+    border-color: $border-color;
+    font-size: $font-size;
+}
 
 .exercise {   
     
-    @function toRem($value) {
-        $remValue: ($value / 16) + rem;	
-        @return $remValue;
-    }
-
-    @mixin article-card($color, $border-color, $font-size: toRem($value) ){
-        color: $color;
-        border-color: $border-color;
-        font-size: $font-size;
-    }
-
     border: toRem(1) solid $color-primary;
     .header{
         display: flex;
